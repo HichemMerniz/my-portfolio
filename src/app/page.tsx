@@ -26,9 +26,9 @@ const brands = [
 export default function Home() {
   return (
       <div className="min-h-screen bg-background text-foreground">
-          <TooltipProvider>
-              <Header/>
-          </TooltipProvider>
+          {/*<TooltipProvider>*/}
+          {/*    <Header/>*/}
+          {/*</TooltipProvider>*/}
           <main>
               <Hero/>
               <BrandsSection brands={brands} />

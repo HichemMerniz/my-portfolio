@@ -1,11 +1,12 @@
 "use client"
 
 import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { Button } from '../ui/button'
-import { Text } from '../ui/text'
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Github, Linkedin, Twitter } from 'lucide-react'
+import {motion} from 'framer-motion'
+import {Button} from '../ui/button'
+import {Text} from '../ui/text'
+import {Badge} from "@/components/ui/badge"
+import {ArrowRight, Github, Linkedin, Twitter} from 'lucide-react'
+import {ParticlesDemo} from "@/components/organisms/ParticlesSection"
 import image from '@/assets/profile-pic.png'
 
 const socialLinks = [
@@ -16,8 +17,10 @@ const socialLinks = [
 
 export function Hero() {
     return (
+        <ParticlesDemo>
         <section className="relative min-h-[80vh] flex flex-col items-center justify-center py-20 px-4 md:px-6 overflow-hidden">
-            {/* Background gradient */}
+
+        {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white/20 -z-10" />
             
             {/* Animated circles in background */}
@@ -112,6 +115,7 @@ export function Hero() {
                 </div>
             </motion.div>
         </section>
+        </ParticlesDemo>
     )
 }
 
