@@ -5,11 +5,9 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "my-portfolio:${BUILD_NUMBER}"
-//         DOCKER_REGISTRY = "your-registry.com"  // Replace with your registry
-//         DOCKER_CREDENTIALS = 'docker-cred-id'  // Jenkins credentials ID for Docker registry
         CONTAINER_NAME = "my-portfolio-container"
-        CONTAINER_PORT = "8080"               // Application port
-        HOST_PORT = "80"                      // Host port to map
+        CONTAINER_PORT = "8080"
+        HOST_PORT = "80"
     }
 
     stages {
@@ -20,35 +18,16 @@ pipeline {
             }
         }
 
-//         stage('Build') {
-//             steps {
-//                 // Build the application
-//                 echo 'Building the application...'
-//                 sh './build-script.sh'  // Replace with your build command
-//             }
-//         }
 
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build Docker image
                     echo 'Building Docker image...'
-                    sh "docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE} ."
+                    sh "docker build -t ${DOCKER_IMAGE} ."
                 }
             }
         }
 
-//         stage('Push to Registry') {
-//             steps {
-//                 script {
-//                     // Login to Docker registry and push image
-//                     withCredentials([usernamePassword(credentialsId: DOCKER_CREDENTIALS, passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
-//                         sh "echo $DOCKER_PASSWORD | docker login $DOCKER_REGISTRY -u $DOCKER_USERNAME --password-stdin"
-//                         sh "docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE}"
-//                     }
-//                 }
-//             }
-//         }
 
         stage('Deploy Container') {
             steps {
@@ -67,7 +46,7 @@ pipeline {
                             --name ${CONTAINER_NAME} \
                             -p ${HOST_PORT}:${CONTAINER_PORT} \
                             --restart unless-stopped \
-                            ${DOCKER_REGISTRY}/${DOCKER_IMAGE}
+                            ${DOCKER_IMAGE}
                     """
                 }
             }
@@ -104,12 +83,6 @@ pipeline {
             echo 'Pipeline failed!'
             // Optional: Send failure notification
             // slackSend channel: '#deployments', color: 'danger', message: "Deployment failed: ${DOCKER_IMAGE}"
-        }
-        always {
-            // Cleanup
-            sh "docker logout ${DOCKER_REGISTRY}"
-            // Optional: Remove old images
-            // sh "docker image prune -f"
         }
     }
 }
