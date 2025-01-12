@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+            label 'jenkins-agent'  // Specifies the agent label
+        }
 
     environment {
         DOCKER_IMAGE = "my-portfolio:${BUILD_NUMBER}"
