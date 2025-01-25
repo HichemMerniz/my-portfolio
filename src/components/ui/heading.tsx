@@ -7,7 +7,7 @@ interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
 }
 
 export function Heading({ level = 2, highlight, className, children, ...props }: HeadingProps) {
-    const Tag = `h${level}` as keyof JSX.IntrinsicElements
+    const Tag: React.ElementType = `h${level}`
 
     return (
         <Tag className={cn("font-bold", className)} {...props}>
