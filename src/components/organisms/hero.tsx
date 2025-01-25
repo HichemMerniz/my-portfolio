@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
+import { Facebook, Github, Instagram, Linkedin } from 'lucide-react'
 import hichemmerniz from "@/assets/PlaygroundImage4.png"
 import {Button} from "@/components/ui/button";
 
@@ -52,16 +52,16 @@ export function Hero() {
 
                             {/* Social Links */}
                             <div className="mt-8 flex justify-center gap-6">
-                                <Link href="#" className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900">
+                                <Link href="https://www.facebook.com/hichem.merniz/" className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900">
                                     <Facebook className="h-6 w-6" />
                                 </Link>
-                                <Link href="#" className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900">
-                                    <Twitter className="h-6 w-6" />
+                                <Link href="https://github.com/HichemMerniz" className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900">
+                                    <Github className="h-6 w-6" />
                                 </Link>
-                                <Link href="#" className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900">
+                                <Link href="https://www.instagram.com/hichem.m__/" className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900">
                                     <Instagram className="h-6 w-6" />
                                 </Link>
-                                <Link href="#" className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900">
+                                <Link href="https://www.linkedin.com/in/hichem-merniz-26809b154/" className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900">
                                     <Linkedin className="h-6 w-6" />
                                 </Link>
                             </div>

@@ -1,4 +1,5 @@
 "use client"
+
 import {Hero} from "@/components/organisms/hero";
 import {Navbar} from "@/components/organisms/navbar";
 import {ServicesSection} from "@/components/organisms/services-section";
