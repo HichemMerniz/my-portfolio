@@ -84,7 +84,6 @@ export function ServicesSection() {
                     <CarouselContent>
                         {competencies.map((competency) => (
                             <CarouselItem key={competency.title} className="md:basis-1/2 lg:basis-1/3">
-
                                 <Card {...competency} />
                             </CarouselItem>
                         ))}

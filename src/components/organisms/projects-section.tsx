@@ -6,6 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Heading } from "@/components/ui/heading"
 import { ExternalLink, Github } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import Image, {StaticImageData} from 'next/image'
+import efaciliti from "@/assets/projects/efaciliti.png"
+import pospro from "@/assets/projects/pospro.png"
+import oceanbridge from "@/assets/projects/oceanbridge.png"
+import shoppey from "@/assets/projects/shoppey.png"
 
 type Category = "All" | "Mobile" | "Web"
 
@@ -18,7 +23,7 @@ interface Project {
     category: Exclude<Category, "All">
     achievements: string
     link: string
-    image: string
+    image: string | StaticImageData
 }
 
 const projects: Project[] = [
@@ -33,19 +38,19 @@ const projects: Project[] = [
         achievements:
             "Rationalisation du processus d'achat, éliminant la nécessité de se rendre dans une banque physique, ce qui a entraîné une augmentation significative des commandes. L'interface conviviale et les fonctionnalités améliorées ont suscité des réactions positives de la part des utilisateurs.",
         link: "https://e-faciliti.dz",
-        image: "/placeholder.svg?height=600&width=800",
+        image: efaciliti,
     },
     {
         id: "2",
         title: "POS Pro",
         description: "Développement d'une application mobile de commerce électronique.",
-        role: "Chef d'équipe",
+        role: "Chef d'équipe (Full stack)",
         technologies: ["Express.js", "TypeScript", "MongoDB", "SQL Server"],
         category: "Mobile",
         achievements:
             "A dirigé le développement d'une solution complète de commerce électronique, gérant à la fois les applications web (Backoffice) et les applications mobiles. A mis en œuvre avec succès des interfaces de communication qui ont facilité la synchronisation transparente des données entre Sales Buzz et WMS.",
         link: "https://play.google.com/store/apps/details?id=com.pospro.pospro&hl=fr",
-        image: "/placeholder.svg?height=600&width=800",
+        image: pospro,
     },
     {
         id: "3",
@@ -58,7 +63,7 @@ const projects: Project[] = [
         achievements:
             "Conception d'une solution permettant au personnel des points de vente de commander facilement des produits directement à partir de l'application. Établissement d'une connexion solide avec Odoo pour un échange de données transparent.",
         link: "http://shoppey.appspot.com",
-        image: "/placeholder.svg?height=600&width=800",
+        image: shoppey,
     },
     {
         id: "4",
@@ -71,7 +76,7 @@ const projects: Project[] = [
         achievements:
             "A fourni une plateforme professionnelle et visuellement attrayante qui a amélioré la présence en ligne du courtier. Mise en œuvre réussie d'un pipeline CI/CD automatisé utilisant les actions GitHub pour des déploiements rationalisés.",
         link: "https://oceanbridges.fr",
-        image: "/placeholder.svg?height=600&width=800",
+        image: oceanbridge,
     },
 ]
 
@@ -117,8 +122,8 @@ export function ProjectsSection() {
                             className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
                         >
                             <div className="relative overflow-hidden aspect-video">
-                                <img
-                                    src={project.image || "/placeholder.svg"}
+                                <Image
+                                    src={project.image}
                                     alt={project.title}
                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
