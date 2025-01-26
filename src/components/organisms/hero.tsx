@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Facebook, Github, Instagram, Linkedin } from 'lucide-react'
+import { motion } from 'framer-motion'
 import hichemmerniz from "@/assets/PlaygroundImage4.png"
 import {Button} from "@/components/ui/button";
 
@@ -39,16 +40,46 @@ export function Hero() {
                     <div className="relative">
                         <div className="relative mx-auto max-w-md">
                             {/* Circular Image */}
-                            <div className="aspect-square overflow-hidden rounded-full border-4 border-white shadow-2xl">
-                                <Image
-                                    src={hichemmerniz}
-                                    alt="Profile"
-                                    width={800}
-                                    height={800}
-                                    className="h-full w-full object-cover"
-                                    priority
-                                />
-                            </div>
+                            <motion.div
+                                className="aspect-square overflow-hidden rounded-full border-4 border-white shadow-2xl"
+                                animate={{
+                                    scale: [1, 1.05, 1],
+                                    rotate: [0, 5, -5, 0],
+                                    borderColor: [
+                                        "rgba(255,255,255,1)",
+                                        "rgba(59, 130, 246, 0.5)",
+                                        "rgba(255,255,255,1)"
+                                    ]
+                                }}
+                                transition={{
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    repeatType: "loop",
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{
+                                        opacity: 1,
+                                        scale: 1,
+                                        transition: {
+                                            duration: 0.8,
+                                            type: "spring",
+                                            stiffness: 120
+                                        }
+                                    }}
+                                >
+                                    <Image
+                                        src={hichemmerniz}
+                                        alt="Profile"
+                                        width={800}
+                                        height={800}
+                                        className="h-full w-full object-cover"
+                                        priority
+                                    />
+                                </motion.div>
+                            </motion.div>
 
                             {/* Social Links */}
                             <div className="mt-8 flex justify-center gap-6">

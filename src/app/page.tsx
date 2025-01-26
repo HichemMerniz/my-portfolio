@@ -1,24 +1,60 @@
 "use client"
 
-import {Hero} from "@/components/organisms/hero";
-import {Navbar} from "@/components/organisms/navbar";
-// import {ServicesSection} from "@/components/organisms/services-section";
-import {ProjectsSection} from "@/components/organisms/projects-section";
-import {SkillsMarquee} from "@/components/organisms/skills-card";
+import { motion } from "framer-motion";
+import { Hero } from "@/components/organisms/hero";
+import { Navbar } from "@/components/organisms/navbar";
+import { ProjectsSection } from "@/components/organisms/projects-section";
+import { SkillsMarquee } from "@/components/organisms/skills-card";
+import {SkillsBeam} from "@/components/organisms/animated-skills";
+
+const pageVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            staggerChildren: 0.3,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const sectionVariants = {
+    initial: { opacity: 0, y: 50 },
+    animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut"
+        }
+    }
+};
 
 export default function Home() {
-  return (
-      <div className="min-h-screen bg-background text-foreground">
-          <main>
-              <Navbar/>
-              <Hero/>
-              {/*<ServicesSection/>*/}
-              <SkillsMarquee/>
-              <ProjectsSection />
-          </main>
-      </div>
-  )
+    return (
+        <motion.div
+            initial="initial"
+            animate="animate"
+            variants={pageVariants}
+            className="min-h-screen bg-background text-foreground overflow-hidden"
+        >
+            <main>
+                <Navbar />
+                <motion.div variants={sectionVariants}>
+                    <Hero />
+                </motion.div>
+                <motion.div variants={sectionVariants}>
+                    <SkillsMarquee />
+                </motion.div>
+                <motion.div variants={sectionVariants}>
+                    <ProjectsSection />
+                </motion.div>
+                {/*<motion.div variants={sectionVariants}>*/}
+                {/*    <SkillsBeam />*/}
+                {/*</motion.div>*/}
+            </main>
+        </motion.div>
+    )
 }
-
-
-
