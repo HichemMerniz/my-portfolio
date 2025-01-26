@@ -2,8 +2,9 @@
 
 import {Hero} from "@/components/organisms/hero";
 import {Navbar} from "@/components/organisms/navbar";
-import {ServicesSection} from "@/components/organisms/services-section";
+// import {ServicesSection} from "@/components/organisms/services-section";
 import {ProjectsSection} from "@/components/organisms/projects-section";
+import {SkillsMarquee} from "@/components/organisms/skills-card";
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
           <main>
               <Navbar/>
               <Hero/>
-              <ServicesSection/>
+              {/*<ServicesSection/>*/}
+              <SkillsMarquee/>
               <ProjectsSection />
           </main>
       </div>
