@@ -5,7 +5,7 @@ import { Hero } from "@/components/organisms/hero";
 import { Navbar } from "@/components/organisms/navbar";
 import { ProjectsSection } from "@/components/organisms/projects-section";
 import { SkillsMarquee } from "@/components/organisms/skills-card";
-import {SkillsBeam} from "@/components/organisms/animated-skills";
+// import {SkillsBeam} from "@/components/organisms/animated-skills";
 
 const pageVariants = {
     initial: { opacity: 0, y: 20 },
