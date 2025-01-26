@@ -48,8 +48,8 @@ const skillReviews = [
     }
 ];
 
-const firstRow = skillReviews.slice(0, skillReviews.length / 2);
-const secondRow = skillReviews.slice(skillReviews.length / 2);
+// const firstRow = skillReviews.slice(0, skillReviews.length / 2);
+// const secondRow = skillReviews.slice(skillReviews.length / 2);
 
 const SkillCard = ({
                        img,
@@ -73,7 +73,7 @@ const SkillCard = ({
             )}
         >
             <div className="absolute top-4 right-4">
-                <Icon className="w-6 h-6 text-primary opacity-50" />
+                <Icon  />
             </div>
             <div className="flex flex-row items-center gap-3 mb-3">
                 <img
@@ -132,7 +132,7 @@ export function SkillsMarquee() {
                 <p className="max-w-xl text-base md:text-lg text-gray-600 dark:text-neutral-400 text-center md:text-left">
                     Ingénieur logiciel expérimenté, je développe des applications web et mobiles robustes en maîtrisant
                     JavaScript, Python, C#, JAVA, Azure DevOps, CI/CD (Jenkins, GitLab, Docker). Spécialisé en solutions
-                    d'entreprise sur mesure pour des environnements DevOps.
+                    d&#39;entreprise sur mesure pour des environnements DevOps.
                 </p>
             </div>
             <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-white/30 dark:bg-neutral-900/30 backdrop-blur-md">
