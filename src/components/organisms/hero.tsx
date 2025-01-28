@@ -24,9 +24,7 @@ export function Hero() {
                         </div>
 
                         <p className="max-w-xl text-lg leading-relaxed text-gray-600">
-                            Experienced full-stack developer and UI/UX designer specializing in creating
-                            intuitive, responsive web applications. Passionate about combining technical
-                            expertise with user-centered design principles.
+                            Développeur full-stack expérimenté et designer UI/UX spécialisé dans la création d'applications web intuitives et réactives. Passionné par la combinaison de l'expertise technique et des principes de conception centrés sur l'utilisateur.
                         </p>
 
                         <Button
