@@ -90,7 +90,7 @@ export function ProjectsSection() {
     )
 
     return (
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-gray-50 ">
             <div className="container px-4 mx-auto">
                 <div className="text-center mb-16">
                     <Heading level={2} className="text-5xl mb-6">
@@ -130,7 +130,7 @@ export function ProjectsSection() {
                                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                                     <Button
                                         variant="outline"
-                                        className="text-white border-white hover:bg-white/20"
+                                        className=" border-white hover:bg-white/20"
                                         onClick={() => window.open(project.link, "_blank")}
                                     >
                                         <ExternalLink className="w-4 h-4 mr-2" />

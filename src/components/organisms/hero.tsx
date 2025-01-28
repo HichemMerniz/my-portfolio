@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Facebook, Github, Instagram, Linkedin } from 'lucide-react'
 import { motion } from 'framer-motion'
-import hichemmerniz from "@/assets/PlaygroundImage4.png"
+import hichemmerniz from "@/assets/profile-pic.png"
 import {Button} from "@/components/ui/button";
 
 export function Hero() {
