@@ -30,7 +30,7 @@ export function Hero() {
                         <Button
                             className="rounded-lg bg-sky-500 px-8 py-4 text-lg font-medium text-white transition-all hover:bg-sky-500/90 hover:shadow-lg"
                         >
-                            Hire Me
+                            Contact Me
                         </Button>
                     </div>
 
