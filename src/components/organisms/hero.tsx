@@ -4,8 +4,15 @@ import { Facebook, Github, Instagram, Linkedin } from 'lucide-react'
 import { motion } from 'framer-motion'
 import hichemmerniz from "@/assets/profile-pic.png"
 import {Button} from "@/components/ui/button";
+import {useRef} from "react";
 
 export function Hero() {
+    const contactRef = useRef(null);
+
+    const scrollToContact = () => {
+        contactRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
         <div className="relative min-h-screen bg-white">
             <div className="mx-auto max-w-7xl px-4 pt-20 lg:pt-32">
@@ -29,6 +36,7 @@ export function Hero() {
 
                         <Button
                             className="rounded-lg bg-sky-500 px-8 py-4 text-lg font-medium text-white transition-all hover:bg-sky-500/90 hover:shadow-lg"
+                            onClick={scrollToContact}
                         >
                             Contact Me
                         </Button>
@@ -99,6 +107,5 @@ export function Hero() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
-

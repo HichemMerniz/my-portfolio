@@ -1,6 +1,8 @@
-export default function ContactSection() {
+import { forwardRef, ForwardedRef } from 'react';
+
+const ContactSection = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>((props, ref: ForwardedRef<HTMLDivElement>) => {
     return (
-        <div className="max-w-3xl mx-auto py-16 px-4 text-center">
+        <div ref={ref} className="max-w-3xl mx-auto py-16 px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-12">Have a project idea? Contact with me!</h1>
 
             <div className="space-y-6 text-xl">
@@ -26,6 +28,9 @@ export default function ContactSection() {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+});
 
+ContactSection.displayName = 'ContactSection';
+
+export default ContactSection;
