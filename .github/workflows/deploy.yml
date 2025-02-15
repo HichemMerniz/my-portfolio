@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build docker image
-        run: docker build -t portfolio-image
+        run: docker build -t portfolio-image .
 
       - name: Run docker container
         run: docker run -d -p 3000:3000 --name portfolio-container portfolio-image
