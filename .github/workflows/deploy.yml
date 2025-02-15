@@ -1,0 +1,21 @@
+name: deploy in local vm
+
+on:
+  push:
+    branches:
+      - test
+
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build docker image
+        run: docker build -t portfolio-image
+
+      - name: Run docker container
+        run: docker run -d -p 3000:3000 --name portfolio-container portfolio-image
