@@ -43,23 +43,43 @@ export default {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
-  			chart: {
-  				'1': 'hsl(var(--chart-1))',
-  				'2': 'hsl(var(--chart-2))',
-  				'3': 'hsl(var(--chart-3))',
-  				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
-  			}
+  			// Brand Colors — Cyber Terminal (Neon Green + Cyan)
+  			brand: {
+  				primary: 'hsl(var(--brand-primary))',
+  				secondary: 'hsl(var(--brand-secondary))',
+  				accent: 'hsl(var(--brand-accent))',
+  				success: 'hsl(var(--brand-success))',
+  				warning: 'hsl(var(--brand-warning))',
+  				error: 'hsl(var(--brand-error))',
+  			},
+  			neon: {
+  				green: 'hsl(142 100% 50%)',
+  				cyan: 'hsl(180 100% 50%)',
+  				amber: 'hsl(45 100% 50%)',
+  				red: 'hsl(0 100% 60%)',
+  			},
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			sm: 'calc(var(--radius) - 4px)',
+  			xl: 'var(--radius-lg)',
+  			'2xl': 'var(--radius-xl)'
+  		},
+  		fontFamily: {
+  			sans: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+  			mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
   		},
   		animation: {
   			meteor: 'meteor 5s linear infinite',
   			marquee: 'marquee var(--duration) infinite linear',
-  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			'fade-in': 'fade-in 0.5s ease-out',
+  			'slide-up': 'slide-up 0.5s ease-out',
+  			'slide-down': 'slide-down 0.5s ease-out',
+  			'scale-in': 'scale-in 0.3s ease-out',
+  			'float': 'float 3s ease-in-out infinite',
+  			'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
   		},
   		keyframes: {
   			meteor: {
@@ -90,9 +110,60 @@ export default {
   				to: {
   					transform: 'translateY(calc(-100% - var(--gap)))'
   				}
+  			},
+  			'fade-in': {
+  				'0%': {
+  					opacity: '0'
+  				},
+  				'100%': {
+  					opacity: '1'
+  				}
+  			},
+  			'slide-up': {
+  				'0%': {
+  					opacity: '0',
+  					transform: 'translateY(20px)'
+  				},
+  				'100%': {
+  					opacity: '1',
+  					transform: 'translateY(0)'
+  				}
+  			},
+  			'slide-down': {
+  				'0%': {
+  					opacity: '0',
+  					transform: 'translateY(-20px)'
+  				},
+  				'100%': {
+  					opacity: '1',
+  					transform: 'translateY(0)'
+  				}
+  			},
+  			'scale-in': {
+  				'0%': {
+  					opacity: '0',
+  					transform: 'scale(0.9)'
+  				},
+  				'100%': {
+  					opacity: '1',
+  					transform: 'scale(1)'
+  				}
+  			},
+  			float: {
+  				'0%, 100%': {
+  					transform: 'translateY(0px)'
+  				},
+  				'50%': {
+  					transform: 'translateY(-10px)'
+  				}
   			}
+  		},
+  		backgroundImage: {
+  			'gradient-primary': 'var(--gradient-primary)',
+  			'gradient-secondary': 'var(--gradient-secondary)',
+  			'gradient-accent': 'var(--gradient-accent)',
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/line-clamp")],
 } satisfies Config;
