@@ -120,15 +120,17 @@ export function Hero() {
                         <div className="relative flex justify-center lg:justify-end">
                             <TerminalWindow title="user@hichem:~$ neofetch" className="w-full max-w-md" scanlines>
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <pre className="text-[10px] leading-[1.1] text-brand-primary/90 select-none hidden sm:block">{`      ___
-     /   \\
-    | () |
-     \\___/
-   __|   |__
-  /  ___   \\
- |  |   |   |
-  \\  \\_/   /
-   \\_____/`}</pre>
+                                    <pre className="text-[10px] leading-[1.1] text-brand-primary/90 select-none hidden sm:block">{`  ___________
+ |  _______  |
+ | |       | |
+ | |  ###  | |
+ | |_______| |
+ |  _______  |
+ | |       | |
+ | |  ###  | |
+ | |_______| |
+ |___________|`}
+                                    </pre>
                                     <div className="flex-1 space-y-1 text-xs">
                                         <p className="text-brand-primary font-bold">{"> hichem@merniz"}</p>
                                         <p className="text-muted-foreground">----------------</p>
